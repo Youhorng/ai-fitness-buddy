@@ -1,0 +1,38 @@
+{
+  "name": "ai-gym-buddy",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "vite",
+    "server": "nodemon server/index.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youhorng/ai-fitness-buddy.git"
+  },
+  "keywords": ["ai", "fitness", "gym", "workout", "openai", "vite"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Youhorng/ai-fitness-buddy/issues"
+  },
+  "homepage": "https://github.com/Youhorng/ai-fitness-buddy#readme",
+  "description": "AI-powered fitness coach and workout companion",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "openai": "^5.20.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10",
+    "vite": "^7.1.5"
+  }
+}

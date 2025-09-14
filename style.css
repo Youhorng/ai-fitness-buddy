@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.welcome-stage h1 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.welcome-stage p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.onboarding-stage {
+    text-align: left;
+}
+
+.onboarding-stage h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.onboarding-stage h3 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.options {
+    margin-bottom: 30px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.options label:hover {
+    background: #e9ecef;
+}
+
+.options input[type="radio"],
+.options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.profile-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.profile-summary p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.chatting-stage {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.chat-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chat-header h2 {
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.message.user {
+    background: #667eea;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.assistant {
+    background: white;
+    border: 1px solid #e9ecef;
+    margin-right: auto;
+}
+
+.message.system {
+    background: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.message-content {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.message-timestamp {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+}
+
+.chat-input input:focus {
+    border-color: #667eea;
+}
+
+.loading {
+    text-align: center;
+    color: white;
+}
+
+.error-stage {
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+}
+
+.error-stage code {
+    background: #f5c6cb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+@media (max-width: 600px) {
+    #app {
+        padding: 10px;
+    }
+    
+    .stage {
+        padding: 20px;
+    }
+    
+    .chatting-stage {
+        height: 80vh;
+    }
+}
