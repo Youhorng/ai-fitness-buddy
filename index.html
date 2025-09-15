@@ -4,16 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Gym Buddy - Your Personal Fitness Coach</title>
+    <meta name="description" content="AI-powered fitness coach and workout companion. Get personalized workout plans and fitness advice.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Main App Container -->
     <div id="app">
-        <!-- Dynamic content will be rendered here -->
-        <div class="loading">
-            <h2>🏋️ Loading AI Gym Buddy...</h2>
+        <!-- Loading Screen (shown while app initializes) -->
+        <div class="loading-screen">
+            <div class="loading-content">
+                <h2>🏋️ AI Gym Buddy</h2>
+                <div class="loading-spinner"></div>
+                <p>Loading your personal fitness coach...</p>
+            </div>
         </div>
     </div>
-    
+
+    <!-- Hidden Templates for Dynamic Content -->
+    <template id="progress-bar-template">
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-text">0%</div>
+        </div>
+    </template>
+
+    <!-- JavaScript Modules -->
     <script type="module" src="src/main.js"></script>
+    
+    <!-- Error Fallback Script -->
+    <script>
+        // Fallback error handler for module loading issues
+        window.addEventListener('error', (event) => {
+            if (event.message.includes('module')) {
+                document.getElementById('app').innerHTML = `
+                    <div class="stage error-stage">
+                        <h2>⚠️ Loading Error</h2>
+                        <p>There was an error loading the application. Please make sure you're running this through a web server (not opening the file directly).</p>
+                        <p>Try running: <code>npm run dev</code></p>
+                        <button class="btn" onclick="location.reload()">Refresh Page</button>
+                    </div>
+                `;
+            }
+        });
+
+        // Check if modules are supported
+        if (!('noModule' in HTMLScriptElement.prototype)) {
+            document.getElementById('app').innerHTML = `
+                <div class="stage error-stage">
+                    <h2>⚠️ Browser Not Supported</h2>
+                    <p>Your browser doesn't support ES6 modules. Please use a modern browser like Chrome, Firefox, Safari, or Edge.</p>
+                </div>
+            `;
+        }
+    </script>
 </body>
 </html>
